@@ -1,130 +1,176 @@
 ﻿[
- {
-   "count": 57,
-   "cleansed": "Pudahuel"
- },
- {
-   "count": 5,
-   "cleansed": "Conchalí"
- },
- {
-   "count": 64,
-   "cleansed": "Peñalolén"
- },
- {
-   "count": 72,
-   "cleansed": "Maipú"
- },
- {
-   "count": 43,
-   "cleansed": "Independencia"
- },
- {
-   "count": 1405,
-   "cleansed": "Las Condes"
- },
- {
-   "count": 11,
-   "cleansed": "Renca"
- },
- {
-   "count": 105,
-   "cleansed": "La Florida"
- },
- {
-   "count": 40,
-   "cleansed": "San Joaquín"
- },
- {
-   "count": 10,
-   "cleansed": "Cerrillos"
- },
- {
-   "count": 7,
-   "cleansed": "Pedro Aguirre Cerda"
- },
- {
-   "count": 9,
-   "cleansed": "La Granja"
- },
- {
-   "count": 118,
-   "cleansed": "La Reina"
- },
- {
-   "count": 1,
-   "cleansed": "Lo Espejo"
- },
- {
-   "count": 579,
-   "cleansed": "Ñuñoa"
- },
- {
-   "count": 10,
-   "cleansed": "El Bosque"
- },
- {
-   "count": 102,
-   "cleansed": "Macul"
- },
- {
-   "count": 35,
-   "cleansed": "La Cisterna"
- },
- {
-   "count": 1656,
-   "cleansed": "Providencia"
- },
- {
-   "count": 1,
-   "cleansed": "San Ramón"
- },
- {
-   "count": 37,
-   "cleansed": "Quinta Normal"
- },
- {
-   "count": 115,
-   "cleansed": "Estación Central"
- },
- {
-   "count": 281,
-   "cleansed": "Vitacura"
- },
- {
-   "count": 3,
-   "cleansed": "Cerro Navia"
- },
- {
-   "count": 115,
-   "cleansed": "San Miguel"
- },
- {
-   "count": 13,
-   "cleansed": "La Pintana"
- },
- {
-   "count": 2812,
-   "cleansed": "Santiago"
- },
- {
-   "count": 602,
-   "cleansed": "Lo Barnechea"
- },
- {
-   "count": 4,
-   "cleansed": "Lo Prado"
- },
- {
-   "count": 38,
-   "cleansed": "Quilicura"
- },
- {
-   "count": 183,
-   "cleansed": "Recoleta"
- },
- {
-   "count": 40,
-   "cleansed": "Huechuraba"
- }
+  {
+    "count": 2087,
+    "price": 39501.47,
+    "rating": 4.53,
+    "cleansed": "Santiago"
+  },
+  {
+    "count": 1276,
+    "price": 51704.88,
+    "rating": 4.61,
+    "cleansed": "Providencia"
+  },
+  {
+    "count": 1103,
+    "price": 67456.35,
+    "rating": 4.63,
+    "cleansed": "Las Condes"
+  },
+  {
+    "count": 465,
+    "price": 270936.95,
+    "rating": 4.71,
+    "cleansed": "Lo Barnechea"
+  },
+  {
+    "count": 404,
+    "price": 45021.82,
+    "rating": 4.69,
+    "cleansed": "Ñuñoa"
+  },
+  {
+    "count": 189,
+    "price": 82172.85,
+    "rating": 4.69,
+    "cleansed": "Vitacura"
+  },
+  {
+    "count": 134,
+    "price": 39902.48,
+    "rating": 4.52,
+    "cleansed": "Recoleta"
+  },
+  {
+    "count": 83,
+    "price": 32510.24,
+    "rating": 4.72,
+    "cleansed": "Estación Central"
+  },
+  {
+    "count": 68,
+    "price": 44275.80,
+    "rating": 4.59,
+    "cleansed": "San Miguel"
+  },
+  {
+    "count": 68,
+    "price": 50577.47,
+    "rating": 4.75,
+    "cleansed": "La Reina"
+  },
+  {
+    "count": 57,
+    "price": 58572.45,
+    "rating": 4.47,
+    "cleansed": "Macul"
+  },
+  {
+    "count": 46,
+    "price": 40376.10,
+    "rating": 4.54,
+    "cleansed": "La Florida"
+  },
+  {
+    "count": 36,
+    "price": 62000.05,
+    "rating": 4.63,
+    "cleansed": "Pudahuel"
+  },
+  {
+    "count": 29,
+    "price": 43790.86,
+    "rating": 3.96,
+    "cleansed": "Maipú"
+  },
+  {
+    "count": 28,
+    "price": 27573.25,
+    "rating": 4.46,
+    "cleansed": "San Joaquín"
+  },
+  {
+    "count": 25,
+    "price": 24045.48,
+    "rating": 4.56,
+    "cleansed": "Quinta Normal"
+  },
+  {
+    "count": 25,
+    "price": 48541.32,
+    "rating": 4.74,
+    "cleansed": "Peñalolén"
+  },
+  {
+    "count": 25,
+    "price": 475234.60,
+    "rating": 4.19,
+    "cleansed": "Independencia"
+  },
+  {
+    "count": 23,
+    "price": 55075.91,
+    "rating": 4.77,
+    "cleansed": "Huechuraba"
+  },
+  {
+    "count": 21,
+    "price": 51912.33,
+    "rating": 4.42,
+    "cleansed": "Quilicura"
+  },
+  {
+    "count": 12,
+    "price": 26314.25,
+    "rating": 4.03,
+    "cleansed": "La Cisterna"
+  },
+  {
+    "count": 6,
+    "price": 44973.33,
+    "rating": 4.85,
+    "cleansed": "Cerrillos"
+  },
+  {
+    "count": 6,
+    "price": 30059.50,
+    "rating": 4.47,
+    "cleansed": "Renca"
+  },
+  {
+    "count": 4,
+    "price": 15750.00,
+    "rating": 3.95,
+    "cleansed": "El Bosque"
+  },
+  {
+    "count": 4,
+    "price": 11838.00,
+    "rating": 4.84,
+    "cleansed": "Pedro Aguirre Cerda"
+  },
+  {
+    "count": 3,
+    "price": 30333.33,
+    "rating": 4.83,
+    "cleansed": "La Pintana"
+  },
+  {
+    "count": 3,
+    "price": 22928.66,
+    "rating": 3.27,
+    "cleansed": "La Granja"
+  },
+  {
+    "count": 2,
+    "price": 32500.00,
+    "rating": 4.84,
+    "cleansed": "Lo Prado"
+  },
+  {
+    "count": 1,
+    "price": 18713.00,
+    "rating": 4,
+    "cleansed": "Cerro Navia"
+  }
 ]

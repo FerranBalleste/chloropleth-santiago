@@ -8,8 +8,8 @@ import listing_counts from "./assets/listing_number.json"
 
 const legendLabels = [
   {"id":1, "alias": "N. of listings"},
-  {"id":2, "alias": "XXX"},
-  {"id":3, "alias": "YYY"}
+  {"id":2, "alias": "Average Price (Chilean peso)"},
+  {"id":3, "alias": "Average Rating"}
 ]
 const selected = ref(legendLabels[0])
 
@@ -17,13 +17,19 @@ const selected = ref(legendLabels[0])
 const featured = computed( () => {
   return santiago.features.map(i => {
       let c = listing_counts.find( elem => elem.cleansed == i.properties.neighbourhood)
-      i.properties.count = c.count
+      if(c){
+        i.properties.count = c.count
+        i.properties.price = c.price
+        i.properties.rating = c.rating
+      }
       return i
     }
   )
 })
 
 const colors = ["#074cad", "#115f9a", "#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "#d0ee11", "#d0f400"]
+const colors2 = ["#fff1f2", "#ffe4e6", "#fecdd3", "#fda4af", "#fb7185", "#f43f5e", "#e11d48", "#be123c", "#9f1239", "#881337"]
+const colors3 = ["#fff7ed", "#ffedd5", "#fed7aa", "#fdba74", "#fb923c", "#f97316", "#ea580c", "#c2410c", "#9a3412", "#7c2d12"]
 const legend = computed(() => { 
   switch(selected.value.id) {
     case 1:
@@ -41,16 +47,29 @@ const legend = computed(() => {
       ]
     case 2:
       return [
-        {"value": 10, "color": colors[9]},
-        {"value": 100, "color": colors[8]},
-        {"value": 200, "color": colors[7]},
-        {"value": 300, "color": colors[6]},
-        {"value": 400, "color": colors[5]},
-        {"value": 100, "color": colors[4]},
-        {"value": 500, "color": colors[3]},
-        {"value": 1000, "color": colors[2]},
-        {"value": 2000, "color": colors[1]},
-        {"value": ">2000", "color": colors[0]}
+        {"value": 10000, "color": colors2[0]},
+        {"value": 20000, "color": colors2[1]},
+        {"value": 30000, "color": colors2[2]},
+        {"value": 40000, "color": colors2[3]},
+        {"value": 50000, "color": colors2[4]},
+        {"value": 60000, "color": colors2[5]},
+        {"value": 70000, "color": colors2[6]},
+        {"value": 80000, "color": colors2[7]},
+        {"value": 90000, "color": colors2[8]},
+        {"value": ">100000", "color": colors2[9]}
+      ]
+    case 3:
+      return [
+        {"value": 0, "color": colors3[0]},
+        {"value": 2, "color": colors3[1]},
+        {"value": 3, "color": colors3[2]},
+        {"value": 4, "color": colors3[3]},
+        {"value": 4.2, "color": colors3[4]},
+        {"value": 4.4, "color": colors3[5]},
+        {"value": 4.6, "color": colors3[6]},
+        {"value": 4.8, "color": colors3[7]},
+        {"value": 4.9, "color": colors3[8]},
+        {"value": ">4.9", "color": colors3[9]}
       ]
     default:
       return undefined
@@ -59,17 +78,23 @@ const legend = computed(() => {
 
 function getColor(value) {
   for(const legendItem of legend.value.slice(0,9)){
+    if(!value) return "#fff"
     if(value < legendItem.value) return legendItem.color
   }
   return legend.value?.[9]?.color
 }
 
 function styleFunction(data) {
+  let property = 0
+  if(selected.value.id == 1) property = data.properties.count
+  else if(selected.value.id == 2) property = data.properties.price
+  else if(selected.value.id == 3) property = data.properties.rating
+  else property = 0
   const resultStyle = {
     weight: 2,
     color: "#010048",
     opacity: 1,
-    fillColor: getColor(data.properties.count),  //send it here
+    fillColor: getColor(property),  //send it here
     fillOpacity: .65
   }
   return resultStyle
@@ -78,15 +103,25 @@ function styleFunction(data) {
 const zoom = ref(10)
 const center = ref([-33.42, -70.52])
 
-const options = {
-  onEachFeature: function onEachFeature(feature, layer) {
-    if (feature.properties.count) {
-      layer.bindTooltip(feature.properties.count + " listings");
-    } else {
-      layer.bindTooltip("Not in port");
+const options = computed(() => {
+  return {
+    onEachFeature: function onEachFeature(feature, layer) {
+      console.log(feature.properties)
+      console.log(selected.value.id)
+      if (selected.value.id == 1 && feature.properties.count) {
+        layer.bindTooltip(feature.properties.count + " listings");
+      } 
+      else if (selected.value.id == 2 && feature.properties.count) {
+        layer.bindTooltip("$" + feature.properties.price + " average");
+      }
+      else if (selected.value.id == 3 && feature.properties.count) {
+        layer.bindTooltip(feature.properties.rating + "  stars");
+      } else {
+        layer.bindTooltip("Not data");
+      }
     }
   }
-}
+})
 
 </script>
 
