@@ -1,6 +1,6 @@
 <script setup>
 import "leaflet/dist/leaflet.css"
-import { LMap, LTileLayer, LGeoJson, LControl } from "@vue-leaflet/vue-leaflet"
+import { LMap, LTileLayer, LGeoJson, LControl, LCircle, LTooltip } from "@vue-leaflet/vue-leaflet"
 import { ref, computed } from 'vue'
 
 import santiago from "./assets/santiago.json"
@@ -106,23 +106,22 @@ const center = ref([-33.42, -70.52])
 const options = computed(() => {
   return {
     onEachFeature: function onEachFeature(feature, layer) {
-      console.log(feature.properties)
-      console.log(selected.value.id)
       if (selected.value.id == 1 && feature.properties.count) {
-        layer.bindTooltip(feature.properties.count + " listings");
+        layer.bindTooltip(feature.properties.neighbourhood + ": " + feature.properties.count + " listings");
       } 
       else if (selected.value.id == 2 && feature.properties.count) {
-        layer.bindTooltip("$" + feature.properties.price + " average");
+        layer.bindTooltip(feature.properties.neighbourhood + ": " + "$" + feature.properties.price + " average");
       }
       else if (selected.value.id == 3 && feature.properties.count) {
-        layer.bindTooltip(feature.properties.rating + "  stars");
+        layer.bindTooltip(feature.properties.neighbourhood + ": " + feature.properties.rating + "  stars");
       } else {
-        layer.bindTooltip("Not data");
+        layer.bindTooltip(feature.properties.neighbourhood + ": " +  "No data");
       }
     }
   }
 })
 
+const showBubbles = ref(false)
 </script>
 
 <template>
@@ -132,6 +131,10 @@ const options = computed(() => {
           {{ opt.alias }}
         </option>
     </select>
+    <div class="checkwrap">
+      <input v-model="showBubbles" type="checkbox" id="scales" name="scales" checked>
+      <label for="scales">Show Bubbles</label>
+    </div>
 
     <l-map ref="map" v-model:zoom="zoom" v-model:center="center" :useGlobalLeaflet="false" :key="selected">
       <LTileLayer name="Stadia Maps Basemap" layer-type="base"
@@ -139,7 +142,35 @@ const options = computed(() => {
       >
       </LTileLayer>
 
-      <LGeoJson :geojson="featured" :optionsStyle="styleFunction" :options="options"></LGeoJson>
+      <LGeoJson :visible="!showBubbles" :geojson="featured" :optionsStyle="styleFunction" :options="options"></LGeoJson>
+
+      <template v-for="circle in listing_counts">
+        <LCircle
+          :visible="showBubbles && selected.id == 1"
+          :lat-lng="[circle.latitude, circle.longitude]"
+          :radius="circle.count * 2"
+          color="#fb923c"
+        >
+        <l-tooltip>{{ circle.cleansed }}: {{ circle.count }}</l-tooltip>
+      </LCircle>
+      <LCircle
+          :visible="showBubbles && selected.id == 2"
+          :lat-lng="[circle.latitude, circle.longitude]"
+          :radius="circle.price/40"
+          color="#a855f7"
+        >
+        <l-tooltip>{{ circle.cleansed }}: ${{ circle.price }}</l-tooltip>
+      </LCircle>
+      <LCircle
+          :visible="showBubbles && selected.id == 3"
+          :lat-lng="[circle.latitude, circle.longitude]"
+          :radius="circle.rating * 100"
+          color="#10b981"
+        >
+        <l-tooltip>{{ circle.cleansed }}: {{ circle.rating }}</l-tooltip>
+      </LCircle>
+      </template>
+      
 
       <LControl position="bottomright" class="legend">
         <h3>Legend</h3>
@@ -174,6 +205,17 @@ select{
   padding: 0.5rem 5px;
   border-radius: 5px;
 }
+
+.checkwrap{
+  background: whitesmoke;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  z-index: 500;
+  padding: 0.5rem 1rem;
+}
+
+
 
 select:focus{ 
   outline: 3px solid darkblue;

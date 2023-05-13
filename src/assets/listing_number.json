@@ -3,174 +3,232 @@
     "count": 2087,
     "price": 39501.47,
     "rating": 4.53,
+    "latitude": -33.4434107892874,
+    "longitude": -70.6496137769569,
     "cleansed": "Santiago"
   },
   {
     "count": 1276,
-    "price": 51704.88,
+    "price": 51704.89,
     "rating": 4.61,
+    "latitude": -33.4300420552257,
+    "longitude": -70.61558238137,
     "cleansed": "Providencia"
   },
   {
     "count": 1103,
-    "price": 67456.35,
+    "price": 67456.36,
     "rating": 4.63,
+    "latitude": -33.4090264984619,
+    "longitude": -70.5741046882461,
     "cleansed": "Las Condes"
   },
   {
     "count": 465,
     "price": 270936.95,
     "rating": 4.71,
+    "latitude": -33.3455795994459,
+    "longitude": -70.3108002044155,
     "cleansed": "Lo Barnechea"
   },
   {
     "count": 404,
-    "price": 45021.82,
-    "rating": 4.69,
+    "price": 45021.83,
+    "rating": 4.7,
+    "latitude": -33.4535785436675,
+    "longitude": -70.6014469472174,
     "cleansed": "Ñuñoa"
   },
   {
     "count": 189,
-    "price": 82172.85,
-    "rating": 4.69,
+    "price": 82172.86,
+    "rating": 4.7,
+    "latitude": -33.3948249954554,
+    "longitude": -70.5779903181202,
     "cleansed": "Vitacura"
   },
   {
     "count": 134,
-    "price": 39902.48,
+    "price": 39902.49,
     "rating": 4.52,
+    "latitude": -33.4284861940299,
+    "longitude": -70.6411158208955,
     "cleansed": "Recoleta"
   },
   {
     "count": 83,
     "price": 32510.24,
     "rating": 4.72,
+    "latitude": -33.4553299601439,
+    "longitude": -70.697586288566,
     "cleansed": "Estación Central"
   },
   {
     "count": 68,
-    "price": 44275.80,
-    "rating": 4.59,
+    "price": 44275.81,
+    "rating": 4.6,
+    "latitude": -33.495853275,
+    "longitude": -70.6524668588235,
     "cleansed": "San Miguel"
   },
   {
     "count": 68,
     "price": 50577.47,
-    "rating": 4.75,
+    "rating": 4.76,
+    "latitude": -33.4457092279412,
+    "longitude": -70.5579480558823,
     "cleansed": "La Reina"
   },
   {
     "count": 57,
-    "price": 58572.45,
+    "price": 58572.46,
     "rating": 4.47,
+    "latitude": -33.4895856310281,
+    "longitude": -70.6017216098855,
     "cleansed": "Macul"
   },
   {
     "count": 46,
-    "price": 40376.10,
+    "price": 40376.11,
     "rating": 4.54,
+    "latitude": -33.5270199324898,
+    "longitude": -70.5902282986104,
     "cleansed": "La Florida"
   },
   {
     "count": 36,
-    "price": 62000.05,
-    "rating": 4.63,
+    "price": 62000.06,
+    "rating": 4.64,
+    "latitude": -33.4483217226263,
+    "longitude": -70.7977129825984,
     "cleansed": "Pudahuel"
   },
   {
     "count": 29,
     "price": 43790.86,
     "rating": 3.96,
+    "latitude": -33.5097834482759,
+    "longitude": -70.7672613793104,
     "cleansed": "Maipú"
   },
   {
     "count": 28,
     "price": 27573.25,
     "rating": 4.46,
+    "latitude": -33.4879185714286,
+    "longitude": -70.6214285714286,
     "cleansed": "San Joaquín"
   },
   {
     "count": 25,
     "price": 24045.48,
     "rating": 4.56,
+    "latitude": -33.4342098797624,
+    "longitude": -70.6916704807726,
     "cleansed": "Quinta Normal"
   },
   {
     "count": 25,
     "price": 48541.32,
     "rating": 4.74,
+    "latitude": -33.48244264,
+    "longitude": -70.54116396,
     "cleansed": "Peñalolén"
   },
   {
     "count": 25,
-    "price": 475234.60,
-    "rating": 4.19,
+    "price": 475234.6,
+    "rating": 4.2,
+    "latitude": -33.4224464,
+    "longitude": -70.6595972,
     "cleansed": "Independencia"
   },
   {
     "count": 23,
     "price": 55075.91,
-    "rating": 4.77,
+    "rating": 4.78,
+    "latitude": -33.3611413043478,
+    "longitude": -70.6559795652174,
     "cleansed": "Huechuraba"
   },
   {
     "count": 21,
     "price": 51912.33,
-    "rating": 4.42,
+    "rating": 4.43,
+    "latitude": -33.3511813333333,
+    "longitude": -70.7233231428572,
     "cleansed": "Quilicura"
   },
   {
     "count": 12,
     "price": 26314.25,
     "rating": 4.03,
+    "latitude": -33.5287904166667,
+    "longitude": -70.6610301666667,
     "cleansed": "La Cisterna"
   },
   {
     "count": 6,
     "price": 44973.33,
-    "rating": 4.85,
+    "rating": 4.86,
+    "latitude": -33.50548,
+    "longitude": -70.71204,
     "cleansed": "Cerrillos"
   },
   {
     "count": 6,
-    "price": 30059.50,
+    "price": 30059.5,
     "rating": 4.47,
+    "latitude": -33.4103883333333,
+    "longitude": -70.6892416666667,
     "cleansed": "Renca"
   },
   {
     "count": 4,
-    "price": 15750.00,
+    "price": 15750,
     "rating": 3.95,
+    "latitude": -33.567355,
+    "longitude": -70.688765,
     "cleansed": "El Bosque"
   },
   {
     "count": 4,
-    "price": 11838.00,
+    "price": 11838,
     "rating": 4.84,
+    "latitude": -33.4793767450252,
+    "longitude": -70.6648053542444,
     "cleansed": "Pedro Aguirre Cerda"
   },
   {
     "count": 3,
     "price": 30333.33,
     "rating": 4.83,
+    "latitude": -33.6053433333333,
+    "longitude": -70.6555066666667,
     "cleansed": "La Pintana"
   },
   {
     "count": 3,
-    "price": 22928.66,
+    "price": 22928.67,
     "rating": 3.27,
+    "latitude": -33.5195666666667,
+    "longitude": -70.6193233333333,
     "cleansed": "La Granja"
   },
   {
     "count": 2,
-    "price": 32500.00,
+    "price": 32500,
     "rating": 4.84,
+    "latitude": -33.45352,
+    "longitude": -70.706725,
     "cleansed": "Lo Prado"
   },
   {
     "count": 1,
-    "price": 18713.00,
+    "price": 18713,
     "rating": 4,
+    "latitude": -33.4336,
+    "longitude": -70.74057,
     "cleansed": "Cerro Navia"
   }
 ]
