@@ -1,10 +1,10 @@
 <script setup>
 import "leaflet/dist/leaflet.css"
-import { LMap, LTileLayer, LGeoJson, LControl, LCircle, LTooltip } from "@vue-leaflet/vue-leaflet"
+import { LMap, LTileLayer, LGeoJson, LControl, LCircle, LTooltip, LPopup } from "@vue-leaflet/vue-leaflet"
 import { ref, computed } from 'vue'
 
 import santiago from "./assets/santiago.json"
-import listing_counts from "./assets/listing_number.json"
+import listing_counts from "./assets/listing_number2.json"
 
 const legendLabels = [
   {"id":1, "alias": "N. of listings"},
@@ -103,9 +103,32 @@ function styleFunction(data) {
 const zoom = ref(10)
 const center = ref([-33.42, -70.52])
 
+function popupHTML(properties){
+  return `<div class="popup">
+  <h3>${properties.neighbourhood}</h3>
+  <p>Count: ${properties.count} listings</p>
+  <p>AvgPrice: $${properties.price}</p>
+  <p>AvgRating: ${properties.rating}
+  <svg height="10" width="10" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 47.94 47.94" xml:space="preserve">
+  <path style="fill:#ED8A19;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757
+	c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042
+	c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685
+	c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528
+	c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956
+	C22.602,0.567,25.338,0.567,26.285,2.486z"/>
+  </svg>
+  </p>
+  </div>`
+}
+
 const options = computed(() => {
   return {
     onEachFeature: function onEachFeature(feature, layer) {
+      if(feature.properties.neighbourhood){
+        layer.bindPopup(popupHTML(feature.properties))
+      }
+      
       if (selected.value.id == 1 && feature.properties.count) {
         layer.bindTooltip(feature.properties.neighbourhood + ": " + feature.properties.count + " listings");
       } 
@@ -144,7 +167,7 @@ const showBubbles = ref(false)
 
       <LGeoJson :visible="!showBubbles" :geojson="featured" :optionsStyle="styleFunction" :options="options"></LGeoJson>
 
-      <template v-for="circle in listing_counts">
+      <template v-for="circle in listing_counts" :index="circle.cleansed">
         <LCircle
           :visible="showBubbles && selected.id == 1"
           :lat-lng="[circle.latitude, circle.longitude]"
@@ -170,7 +193,6 @@ const showBubbles = ref(false)
         <l-tooltip>{{ circle.cleansed }}: {{ circle.rating }}</l-tooltip>
       </LCircle>
       </template>
-      
 
       <LControl position="bottomright" class="legend">
         <h3>Legend</h3>
